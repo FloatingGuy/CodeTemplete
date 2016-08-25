@@ -1,0 +1,194 @@
+============================================
+PRODUCT_COPY_FILES device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml ignored.
+No private recovery resources for TARGET_DEVICE hammerhead
+make: Entering directory `/home/ubuntu/android_6.0.1'
+target thumb C++: CVE_2016_0810 <= external/Vulnerbility/0810/cve_2016_0810.cpp
+external/Vulnerbility/0810/cve_2016_0810.cpp: In function 'int main()':
+external/Vulnerbility/0810/cve_2016_0810.cpp:39:10: error: 'sp' does not name a type
+  typedef sp<Sample> (*findSample_l_p)(int);   //add
+          ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:27: error: typedef 'doLoad_p' is initialized (use decltype instead)
+  typedef void (*doLoad_p)(sp<Sample>);   //del
+                           ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:27: error: 'sp' was not declared in this scope
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:27: note: suggested alternative:
+In file included from system/core/include/utils/RefBase.h:27:0,
+                 from system/core/include/utils/Thread.h:31,
+                 from system/core/include/utils/threads.h:35,
+                 from frameworks/base/media/jni/soundpool/SoundPool.h:20,
+                 from external/Vulnerbility/0810/cve_2016_0810.cpp:21:
+system/core/include/utils/StrongPointer.h:59:7: note:   'android::sp'
+ class sp {
+       ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:30: error: 'Sample' was not declared in this scope
+  typedef void (*doLoad_p)(sp<Sample>);   //del
+                              ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:30: note: suggested alternative:
+In file included from external/Vulnerbility/0810/cve_2016_0810.cpp:21:0:
+frameworks/base/media/jni/soundpool/SoundPool.h:52:7: note:   'android::Sample'
+ class Sample  : public RefBase {
+       ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:37: error: expected primary-expression before ')' token
+  typedef void (*doLoad_p)(sp<Sample>);   //del
+                                     ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:45:7: error: 'hanlde' was not declared in this scope
+  if (!hanlde)
+       ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:53:2: error: 'findSample_l_p' was not declared in this scope
+  findSample_l_p findSample_l_f = (findSample_l_p)dlsym(handle, "findSample");
+  ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:54:6: error: 'findSample_l_f' was not declared in this scope
+  if (findSample_l_f == NULL)
+      ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:56:24: error: invalid conversion from 'const char*' to 'char*' [-fpermissive]
+   if ((error = dlerror()) != NULL)
+                        ^
+make: *** [out/target/product/hammerhead/obj/EXECUTABLES/CVE_2016_0810_intermediates/cve_2016_0810.o] Error 1
+make: Leaving directory `/home/ubuntu/android_6.0.1'
+
+#### make failed to build some targets (1 seconds) ####
+
+ubuntu@ubuntu:~/android_6.0.1$ mmm ./external/Vulnerbility/0810/
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=6.0.1
+TARGET_PRODUCT=aosp_hammerhead
+TARGET_BUILD_VARIANT=userdebug
+TARGET_BUILD_TYPE=release
+TARGET_BUILD_APPS=
+TARGET_ARCH=arm
+TARGET_ARCH_VARIANT=armv7-a-neon
+TARGET_CPU_VARIANT=krait
+TARGET_2ND_ARCH=
+TARGET_2ND_ARCH_VARIANT=
+TARGET_2ND_CPU_VARIANT=
+HOST_ARCH=x86_64
+HOST_OS=linux
+HOST_OS_EXTRA=Linux-4.4.0-34-generic-x86_64-with-Ubuntu-14.04-trusty
+HOST_BUILD_TYPE=release
+BUILD_ID=MMB29X
+OUT_DIR=out
+============================================
+PRODUCT_COPY_FILES device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml ignored.
+No private recovery resources for TARGET_DEVICE hammerhead
+make: Entering directory `/home/ubuntu/android_6.0.1'
+target thumb C++: CVE_2016_0810 <= external/Vulnerbility/0810/cve_2016_0810.cpp
+external/Vulnerbility/0810/cve_2016_0810.cpp: In function 'int main()':
+external/Vulnerbility/0810/cve_2016_0810.cpp:39:10: error: 'sp' does not name a type
+  typedef sp<Sample> (*findSample_l_p)(int);   //add
+          ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:27: error: typedef 'doLoad_p' is initialized (use decltype instead)
+  typedef void (*doLoad_p)(sp<Sample>);   //del
+                           ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:27: error: 'sp' was not declared in this scope
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:27: note: suggested alternative:
+In file included from system/core/include/utils/RefBase.h:27:0,
+                 from system/core/include/utils/Thread.h:31,
+                 from system/core/include/utils/threads.h:35,
+                 from frameworks/base/media/jni/soundpool/SoundPool.h:20,
+                 from external/Vulnerbility/0810/cve_2016_0810.cpp:21:
+system/core/include/utils/StrongPointer.h:59:7: note:   'android::sp'
+ class sp {
+       ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:30: error: 'Sample' was not declared in this scope
+  typedef void (*doLoad_p)(sp<Sample>);   //del
+                              ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:30: note: suggested alternative:
+In file included from external/Vulnerbility/0810/cve_2016_0810.cpp:21:0:
+frameworks/base/media/jni/soundpool/SoundPool.h:52:7: note:   'android::Sample'
+ class Sample  : public RefBase {
+       ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:40:37: error: expected primary-expression before ')' token
+  typedef void (*doLoad_p)(sp<Sample>);   //del
+                                     ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:45:7: error: 'hanlde' was not declared in this scope
+  if (!hanlde)
+       ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:53:2: error: 'findSample_l_p' was not declared in this scope
+  findSample_l_p findSample_l_f = (findSample_l_p)dlsym(handle, "findSample");
+  ^
+external/Vulnerbility/0810/cve_2016_0810.cpp:54:6: error: 'findSample_l_f' was not declared in this scope
+  if (findSample_l_f == NULL)
+      ^
+make: *** [out/target/product/hammerhead/obj/EXECUTABLES/CVE_2016_0810_intermediates/cve_2016_0810.o] Error 1
+make: Leaving directory `/home/ubuntu/android_6.0.1'
+
+#### make failed to build some targets (1 seconds) ####
+
+ubuntu@ubuntu:~/android_6.0.1$ 
+ubuntu@ubuntu:~/android_6.0.1$ 
+ubuntu@ubuntu:~/android_6.0.1$ 
+ubuntu@ubuntu:~/android_6.0.1$ 
+ubuntu@ubuntu:~/android_6.0.1$ mmm ./external/Vulnerbility/0810/
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=6.0.1
+TARGET_PRODUCT=aosp_hammerhead
+TARGET_BUILD_VARIANT=userdebug
+TARGET_BUILD_TYPE=release
+TARGET_BUILD_APPS=
+TARGET_ARCH=arm
+TARGET_ARCH_VARIANT=armv7-a-neon
+TARGET_CPU_VARIANT=krait
+TARGET_2ND_ARCH=
+TARGET_2ND_ARCH_VARIANT=
+TARGET_2ND_CPU_VARIANT=
+HOST_ARCH=x86_64
+HOST_OS=linux
+HOST_OS_EXTRA=Linux-4.4.0-34-generic-x86_64-with-Ubuntu-14.04-trusty
+HOST_BUILD_TYPE=release
+BUILD_ID=MMB29X
+OUT_DIR=out
+============================================
+PRODUCT_COPY_FILES device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml ignored.
+No private recovery resources for TARGET_DEVICE hammerhead
+make: Entering directory `/home/ubuntu/android_6.0.1'
+target thumb C++: CVE_2016_0810 <= external/Vulnerbility/0810/cve_2016_0810.cpp
+external/Vulnerbility/0810/cve_2016_0810.cpp: In function 'int main()':
+external/Vulnerbility/0810/cve_2016_0810.cpp:45:7: error: 'hanlde' was not declared in this scope
+  if (!hanlde)
+       ^
+make: *** [out/target/product/hammerhead/obj/EXECUTABLES/CVE_2016_0810_intermediates/cve_2016_0810.o] Error 1
+make: Leaving directory `/home/ubuntu/android_6.0.1'
+
+#### make failed to build some targets (1 seconds) ####
+
+ubuntu@ubuntu:~/android_6.0.1$ 
+ubuntu@ubuntu:~/android_6.0.1$ 
+ubuntu@ubuntu:~/android_6.0.1$ mmm ./external/Vulnerbility/0810/
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=6.0.1
+TARGET_PRODUCT=aosp_hammerhead
+TARGET_BUILD_VARIANT=userdebug
+TARGET_BUILD_TYPE=release
+TARGET_BUILD_APPS=
+TARGET_ARCH=arm
+TARGET_ARCH_VARIANT=armv7-a-neon
+TARGET_CPU_VARIANT=krait
+TARGET_2ND_ARCH=
+TARGET_2ND_ARCH_VARIANT=
+TARGET_2ND_CPU_VARIANT=
+HOST_ARCH=x86_64
+HOST_OS=linux
+HOST_OS_EXTRA=Linux-4.4.0-34-generic-x86_64-with-Ubuntu-14.04-trusty
+HOST_BUILD_TYPE=release
+BUILD_ID=MMB29X
+OUT_DIR=out
+============================================
+PRODUCT_COPY_FILES device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml ignored.
+No private recovery resources for TARGET_DEVICE hammerhead
+make: Entering directory `/home/ubuntu/android_6.0.1'
+target thumb C++: CVE_2016_0810 <= external/Vulnerbility/0810/cve_2016_0810.cpp
+target Executable: CVE_2016_0810 (out/target/product/hammerhead/obj/EXECUTABLES/CVE_2016_0810_intermediates/LINKED/CVE_2016_0810)
+target Unpacked: CVE_2016_0810 (out/target/product/hammerhead/obj/EXECUTABLES/CVE_2016_0810_intermediates/PACKED/CVE_2016_0810)
+target Symbolic: CVE_2016_0810 (out/target/product/hammerhead/symbols/system/bin/CVE_2016_0810)
+Export includes file: external/Vulnerbility/0810/Android.mk -- out/target/product/hammerhead/obj/EXECUTABLES/CVE_2016_0810_intermediates/export_includes
+target Strip: CVE_2016_0810 (out/target/product/hammerhead/obj/EXECUTABLES/CVE_2016_0810_intermediates/CVE_2016_0810)
+Install: out/target/product/hammerhead/system/bin/CVE_2016_0810
+make: Leaving directory `/home/ubuntu/android_6.0.1'
+
+#### make completed successfully (1 seconds) ####
+
+ubuntu@ubuntu:~/android_6.0.1$ 
+
