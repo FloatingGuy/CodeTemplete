@@ -33,7 +33,7 @@ LOCAL_C_INCLUDES := \
 ifeq ($(shell expr $(PLATFORM_SDK_VERSION) "=" 23), 1)
 	LOCAL_SHARED_LIBRARIES += libstlport
 	LOCAL_C_INCLUDES += \
-		frameworks/base/media/jni/soundpool \
+		frameworks/base/media/jni/soundpool
 else
 	LOCAL_C_INCLUDES += \
 		frameworks/av/include/media \
