@@ -4,3 +4,7 @@
 *.bak
 CVE_*.cpp
 CVE_*.h
+*~
+local/
+/TODO
+
