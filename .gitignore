@@ -1,0 +1,6 @@
+*.o
+*.pyc
+*~
+*.bak
+CVE_*.cpp
+CVE_*.h
