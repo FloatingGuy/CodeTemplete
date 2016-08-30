@@ -24,12 +24,12 @@ LOCAL_C_INCLUDES := \
 	bionic \
 	frameworks/rs/server \
 	frameworks/av/media/libstagefright/mpeg2ts \
-	frameworks/native/include/   \
+	frameworks/native/include/   
 
 #	frameworks/av/include/media \
 #	frameworks/base/media/jni/soundpool \
 
-
+#BUG
 ifeq ($(shell expr $(PLATFORM_SDK_VERSION) "=" 23), 1)
 	LOCAL_SHARED_LIBRARIES += libstlport
 	LOCAL_C_INCLUDES += \
