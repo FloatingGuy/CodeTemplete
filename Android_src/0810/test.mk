@@ -36,9 +36,9 @@ ifeq ($(shell expr $(PLATFORM_SDK_VERSION) "=" 23), 1)
 		frameworks/base/media/jni/soundpool
 else
 	LOCAL_C_INCLUDES += \
-		frameworks/av/include/media \
+		frameworks/av/include/media 
 endif
-endif
+
 
 LOCAL_MODULE:= CVE_2016_0810
 
