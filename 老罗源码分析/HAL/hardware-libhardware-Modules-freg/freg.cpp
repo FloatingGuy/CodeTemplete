@@ -1,8 +1,8 @@
 /*
 * @Author: LK_mac
 * @Date:   2016-08-26 18:36:47
-* @Last Modified by:   LK_mac
-* @Last Modified time: 2016-08-29 21:40:26
+* @Last Modified by:   liukun
+* @Last Modified time: 2016-08-31 14:04:02
 * 
 * @Reference:
 * 	实现 hardware.cpp
@@ -13,13 +13,15 @@
 
 #define LOG_TAG  "FregHALStub"
 
+#include <string.h>  // strcmp
+#include <stdlib.h>  // malloc   free
 #include <hardware/freg.h>
 #include <hardware/hardware.h>
 
 #include <fcntl.h>
 #include <errno.h>
 
-#include <cutils/log.h>
+#include <cutils/log.h>			//ALOGE/ALOGI/ALOGV ..... log/log.h
 #include <cutils/atomic.h>
 #define DEVICE_NAME "/dev/freg"
 #define MODULE_NAME "Freg"
@@ -28,7 +30,7 @@
 /**套路
 * 设备的打开和关闭
 */
-static int freg_device_open(const struct hw_module_t* module, char * id, struct hw_device_t** device);
+static int freg_device_open(const struct hw_module_t* module,const char * id, struct hw_device_t** device);
 static int freg_device_close(struct hw_device_t* device);
 
 /**功能接口
@@ -57,19 +59,19 @@ struct freg_module_t HAL_MODULE_INFO_SYM = {
 		id: FREG_HARDWARE_MODULE_ID,
 		name: MODULE_NAME,
 		author: MODULE_AUTHOR,
-		method: &freg_module_methods,
+		methods: &freg_module_methods,
 	}
 };
 
-static int freg_device_open(const struct hw_module_t module, char* id, struct hw_device_t** device)
+static int freg_device_open(const struct hw_module_t* module, const char* id, struct hw_device_t** device)
 {
-	if (strcmp(id, FREG_HARDWARE_DEVICE_ID)) {
+	if (!strcmp(id, FREG_HARDWARE_DEVICE_ID)) {
 		struct freg_device_t* dev;
 
 		dev = (struct freg_device_t*) malloc(sizeof(struct freg_device_t));   //
 		if (!dev)
 		{
-			LOGE("Failed to alloc apace for freg_device_t");
+			ALOGE("Failed to alloc apace for freg_device_t");
 			return -EFAULT;
 		}
 		memset(dev, 0, sizeof(struct freg_device_t));
@@ -83,13 +85,13 @@ static int freg_device_open(const struct hw_module_t module, char* id, struct hw
 
 		if ((dev->fd = open(DEVICE_NAME, O_RDWR)) == -1)
 		{
-			LOGE("Failed to open device file /dev/freg -- %s", strerror(errno));
+			ALOGE("Failed to open device file /dev/freg -- %s", strerror(errno));
 			free(dev);
 			return -EFAULT;
 		}
 
 		*device = &(dev->common);
-		LOGI("Open device file /dev/freg successfully.");
+		ALOGI("Open device file /dev/freg successfully.");
 
 		return 0;
 	}
@@ -99,7 +101,7 @@ static int freg_device_open(const struct hw_module_t module, char* id, struct hw
 
 static int freg_device_close(struct hw_device_t* dev)
 {
-	struct freg_device_t* freg_device = (struct freg_device_t)dev;  //????????  可能会引用错误，  除非调用代码 传递的就是freg_device_t
+	struct freg_device_t* freg_device = (struct freg_device_t*)dev;  //????????  可能会引用错误，  除非调用代码 传递的就是freg_device_t
 	if (freg_device)
 	{
 		close(freg_device->fd);
@@ -112,27 +114,29 @@ static int freg_get_val(struct freg_device_t* dev, int* val)
 {
 	if (!dev)
 	{
-		LOGE("Null dev pointer");
+		ALOGE("Null dev pointer");
 		return -EFAULT;
 	}
 
 	if (!val)
 	{
-		LOGE("Null val pointer");
+		ALOGE("Null val pointer");
 		return -EFAULT;
 	}
 
-	read(dev->fd, val, sizeof(*val))
-	LOGI("Get value %d from device file /dev/freg.", *val);
+	read(dev->fd, val, sizeof(*val));
+	ALOGI("Get value %d from device file /dev/freg.", *val);
+	return 0;
 }
 
 static int freg_set_val(struct freg_device_t* dev, int val)
 {
 	if (!dev)
 	{
-		LOGE("Null dev pointer");
+		ALOGE("Null dev pointer");
 		return -EFAULT;
 	}
-	LOGI("get value %d to device file /dev/freg.", *val);
-	write(dev->fd, *val, sizeof(val));
+	ALOGI("get value %d to device file /dev/freg.", val);
+	write(dev->fd, &val, sizeof(val));
+	return 0;
 }
