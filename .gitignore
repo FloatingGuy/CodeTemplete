@@ -7,4 +7,6 @@ CVE_*.h
 *~
 local/
 /TODO
+.DS*
+
 

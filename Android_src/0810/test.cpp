@@ -2,12 +2,6 @@
 * @Subject: 
 * @Model:
 * @Compile-cmd: gcc -Wall 
-* 
-* @Date:      2016-08-24 15:43:40
-* @File Path: /Users/FloatingGuy/Project/代码片段/dynamic_demo.c
-* @Create Time: 2016-08-24 15:43:40
-* @Last Modified by:   LK_mac
-* @Last Modified time: 2016-08-25 18:17:13
 * @Reference: 
 * 准备工作：
 * 	1. 拉取手机 或 out 目录下的的 libmedia.so 文件
