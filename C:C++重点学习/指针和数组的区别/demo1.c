@@ -2,7 +2,7 @@
 * @Author: liukun
 * @Date:   2016-08-31 18:57:44
 * @Last Modified by:   LK_mac
-* @Last Modified time: 2016-08-31 20:36:39
+* @Last Modified time: 2016-09-01 14:44:58
 *
 * 目标-- 指针和数组的区别：
 * 	1. 数组名不能当做变量来处理，不能取地址（无意义）
@@ -96,5 +96,9 @@ int main(){
 	test1();
 
 	test2();
+	unsigned int a = 0xffffffff;
+	unsigned int b = 0x10000004;
+	printf("%d, %lx\n", sizeof(int), b);
+	printf("%lx\n", (int)(a+b));
     return 0;
 }
