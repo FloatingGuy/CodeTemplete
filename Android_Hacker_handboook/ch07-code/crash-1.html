@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script>
+      window.onload = function() {
+        var e = document.getElementById("test");
+        var s = window.getSelection();
+        s.setPosition(e, 1050000);
+        document.execCommand("InsertHTML", false, "<noscript>baz");
+        }
+    </script>
+  </head>
+  <body>
+    <input id="test" contenteditable="true">
+  </body>
+</html>

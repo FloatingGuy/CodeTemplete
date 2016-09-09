@@ -1,0 +1,16 @@
+^external/.*
+^packages/.*
+^cts/.*
+^dalvik/.*
+^development/.*
+^prebuilts/.*
+^out/.*
+^tools/.*
+^sdk/.*
+^libcore/.*
+^gdk/.*
+^hardware/.*
+^device/.*
+^kernel/*
+^pdk/*
+^developers/*

@@ -1,0 +1,5 @@
+config AHH_SETUID
+	tristate "Android Hacker's Handbook setuid Backdoor module"
+	default m
+	help
+	  say M to compile it as a module

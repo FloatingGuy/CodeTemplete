@@ -1,0 +1,5 @@
+config AHH_HELLOWORLD
+	tristate "Android Hacker's Handbook Hello World module"
+	default m
+	help
+	  say M to compile it as a module
