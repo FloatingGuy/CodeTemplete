@@ -21,7 +21,7 @@ LOCAL_C_INCLUDES := \
     $(TOP)/frameworks/av/include/ \
     $(TOP)/frameworks/native/include/hardware/ \
     $(TOP)/frameworks/native/include/binder  \
-    $(TOP)/frameworks/rs/server 
+    $(TOP)/frameworks/rs/server
 
 
 LOCAL_CFLAGS += -Werror -Wno-error=deprecated-declarations -Wall
