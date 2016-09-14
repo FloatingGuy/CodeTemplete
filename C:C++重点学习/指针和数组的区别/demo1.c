@@ -1,8 +1,8 @@
 /*
 * @Author: liukun
 * @Date:   2016-08-31 18:57:44
-* @Last Modified by:   LK_mac
-* @Last Modified time: 2016-09-01 14:44:58
+* @Last Modified by:   liukun
+* @Last Modified time: 2016-09-14 14:14:07
 *
 * 目标-- 指针和数组的区别：
 * 	1. 数组名不能当做变量来处理，不能取地址（无意义）
@@ -26,21 +26,21 @@ static void test1()
 	// char ch[] = {"1","2","3","4","5"};
 	char ch[] = {'1','2','3'};
 	char** pp;
-	p1 = ch;	
-	printf("&ch=%lx\n", &(&ch));    //栈上的地址 
+	p1 = ch;
+	printf("&ch=%lx\n", &(&ch));    //栈上的地址
 	printf("地址: pch[0]=0x%lx, ch=%lx, \n数据: ch[0]=%c, ch[1]=%c\n\n",&ch[0], ch, ch[0], ch[1]);   //%x 只能显示 低4个字节
-	
+
 
 	// pp = &ch;   //bug   test.cpp:19:5: error: cannot convert 'char (*)[12]' to 'char**' in assignment
 //ch的内容就是栈上的地址，没办法再获取栈地址的地址 （上面的例子就是 证明）
-	// p2 = *pp; 
-	// 
+	// p2 = *pp;
+	//
 	// ======================Begain Output ==================
 	// &ch=7fff71434230
 	// 地址: pch[0]=0x7fff71434230, ch=7fff71434230,
 	// 数据: ch[0]=1, ch[1]=2
 	// ======================End Output ==================
-	// 
+	//
 }
 
 static void test2()
@@ -52,7 +52,7 @@ static void test2()
 	printf("a=%d, pa = %d, ppa=%d pppa=%d\n", a, pa, ppa, pppa);
 	printf("a=%d, pa = %d, ppa=%d pppa=%d\n", a, *pa, *ppa, *pppa);
 
-	// ======================Begain Output ================== 
+	// ======================Begain Output ==================
 	// a=1, pa = 1900233252, ppa=1900233256 pppa=1900233264
 	// a=1, pa = 1, ppa=1900233252 pppa=1900233256
 	// ======================End Output ==================
